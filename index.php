@@ -10,12 +10,7 @@
 
   <script>
     $(document).ready(function () {
-      $('#myTable').DataTable();
-
-      // $(".userRow").click(function () {
-      //   window.location = $(this).data("href");
-      // });
-
+      // $('#myTable').DataTable();
     });
   </script>
 </head>
@@ -23,21 +18,36 @@
 <body>
   <?php include 'core/navbar.php'; ?>
 
-  <div class="">
-    <div class="card contentWrapper">
-      <div class="card-body">
-
-        <!-- Export Btn -->
-        <div class="text-right" id="groupBtn">
-          <button type="button" class="btn btn-info btn-sm">Export Zip</button>
-        </div>
-        <!-- Table -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 mt-3">
+        <form>
+          <div class="form-row justify-content-end">
+            <div class="form-group col-md-2">
+              <select class="form-control">
+                <option>Select Field</option>
+                <option>NameTH</option>
+                <option>NameEN</option>
+                <option>Position</option>
+                <option>Department</option>
+                <option>Mobile</option>
+                <option>Email</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter keyword...">
+                <div class="input-group-append">
+                  <button class="btn btn-secondary" type="button">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
         <div class="table-responsive">
           <table id="myTable" class="table table-striped table-hover">
             <thead>
               <tr>
-                <th scope="col">#</th>              
-                <th scope="col">Staff ID</th>
                 <th scope="col">NameTH</th>
                 <th scope="col">NameEN</th>
                 <th scope="col">Position</th>
@@ -49,27 +59,67 @@
             </thead>
             <tbody>
               <?php 
-              for($i=0; $i<=10; $i++){ ?>
+              for($i=0; $i<10; $i++){ ?>
               <tr>
-                <td><input type="checkbox" name="staffID" value="staffID"></td>
-                <td><small>hansak.a</small></td>
-                <td><small>หาญศักดิ์ อิสริยะทิพย์</small></td>
-                <td><small>Hansak Aisariyatip</small></td>
-                <td><small>AVP - Portfolio Project Manager</small></td>
-                <td><small>Information Technology</small></td>
-                <td><small>+668 4024 5800</small></td>
-                <td><small>hansak.a@assetworld.co.th</small></td>
+                <td>
+                  <small>หาญศักดิ์ อิสริยะทิพย์</small>
+                </td>
+                <td>
+                  <small>Hansak Aisariyatip</small>
+                </td>
+                <td>
+                  <small>AVP - Portfolio Project Manager</small>
+                </td>
+                <td>
+                  <small>Information Technology</small>
+                </td>
+                <td>
+                  <small>+668 4024 5800</small>
+                </td>
+                <td>
+                  <small>hansak.a@assetworld.co.th</small>
+                </td>
                 <td class="text-center">
+                  <a href="user.php?empID=123" class="btn btn-outline-success btn-sm" role="button">Add</a>
                   <a href="user.php?empID=123" class="btn btn-outline-info btn-sm" role="button">View</a>
                 </td>
               </tr>
               <?php } ?>
             </tbody>
           </table>
-        <div>
+        </div>
+        </div>
+      <!-- Right List -->
+      <div class="col-md-2 mt-3">
+        <form>
+          <div class="form-row justify-content-end">
+            <div class="form-group">
+              <button type="button" class="btn btn-secondary">Export</button>
+            </div>
+          </div>
+        </form>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <tbody>
+              <?php 
+              $fakeList = ['Hansak Aisariyatip','John Smith','Peter Parker'];
+              foreach($fakeList as $flist){ ?>
+              <tr>
+                <td>
+                  <small><?php echo $flist; ?></small>
+                </td>
+                <td class="text-center">
+                <!-- <i class="fas fa-camera-retro"></i> -->
+                  <a href="user.php?empID=123" class="btn btn-outline-danger btn-sm" role="button">&times;</a>
+                </td>
+              </tr>
+              <?php } ?>
+            </tbody>
+          </table>
+          <div>
+          </div>  
       </div>
-    </div>
-  </div>
+      </div>
 </body>
 
 </html>
