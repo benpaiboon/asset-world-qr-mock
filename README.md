@@ -1,0 +1,1 @@
+# asset-world-qr-mock
