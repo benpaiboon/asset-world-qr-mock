@@ -1,0 +1,11 @@
+.contentWrapper {
+  width: 100%;
+  min-height: 100vh;
+  border-top: none;
+  border-radius: 0%;
+}
+
+#groupBtn {
+  margin-right: 15px;
+  margin-bottom: 20px;
+}

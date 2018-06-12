@@ -1,0 +1,7 @@
+{
+  "ldap_host": "10.1.230.21", 
+  "ldap_port": 389,
+  "ldap_username": "kanitsorn.p@assetworld.co.th",
+  "ldap_password": "Awc@2018",
+  "ldap_base_dn": "DC=assetworld,DC=co,DC=th"
+}
