@@ -10,7 +10,11 @@
 
   <script>
     $(document).ready(function () {
-      // $('#myTable').DataTable();
+       $('#exportListTable').on('click', 'button', function() {
+        var delID = $(this).attr('ref');
+        // console.log(delID);
+        $('#exportListTable tr#'+ delID).remove();
+       });
     });
   </script>
 </head>
@@ -65,7 +69,7 @@
                   <small>หาญศักดิ์ อิสริยะทิพย์</small>
                 </td>
                 <td>
-                  <small id="nameEN">Hansak Aisariyatip</small>
+                  <small>Hansak Aisariyatip</small>
                 </td>
                 <td>
                   <small>AVP - Portfolio Project Manager</small>
@@ -102,15 +106,14 @@
           <table id="exportListTable" class="table table-hover">
             <tbody>
               <?php 
-              $fakeList = ['Hansak Aisariyatip','John Smith','Peter Parker'];
+              $fakeList = ['Hansak','John','Peter'];
               foreach($fakeList as $flist){ ?>
-              <tr>
+              <tr id="<?php echo $flist; ?>">
                 <td>
-                  <small ref="exportNameEN"><?php echo $flist; ?></small>
+                  <small><?php echo $flist; ?></small>
                 </td>
                 <td class="text-center">
-                <!-- <i class="fas fa-camera-retro"></i> -->
-                  <button type="button" class="btn btn-outline-danger btn-sm">&times;</button>
+                  <button type="button" ref="<?php echo $flist; ?>" class="btn btn-outline-danger btn-sm">&times;</button>
                 </td>
               </tr>
               <?php } ?>
