@@ -45,7 +45,7 @@
           </div>
         </form>
         <div class="table-responsive">
-          <table id="myTable" class="table table-striped table-hover">
+          <table id="searchTable" class="table table-striped table-hover">
             <thead>
               <tr>
                 <th scope="col">NameTH</th>
@@ -59,13 +59,13 @@
             </thead>
             <tbody>
               <?php 
-              for($i=0; $i<10; $i++){ ?>
+              for($i=0; $i<5; $i++){ ?>
               <tr>
                 <td>
                   <small>หาญศักดิ์ อิสริยะทิพย์</small>
                 </td>
                 <td>
-                  <small>Hansak Aisariyatip</small>
+                  <small id="nameEN">Hansak Aisariyatip</small>
                 </td>
                 <td>
                   <small>AVP - Portfolio Project Manager</small>
@@ -80,7 +80,7 @@
                   <small>hansak.a@assetworld.co.th</small>
                 </td>
                 <td class="text-center">
-                  <a href="user.php?empID=123" class="btn btn-outline-success btn-sm" role="button">Add</a>
+                  <button type="button" class="btn btn-outline-success btn-sm" id="addBtn">Add</button>
                   <a href="user.php?empID=123" class="btn btn-outline-info btn-sm" role="button">View</a>
                 </td>
               </tr>
@@ -99,18 +99,18 @@
           </div>
         </form>
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table id="exportListTable" class="table table-hover">
             <tbody>
               <?php 
               $fakeList = ['Hansak Aisariyatip','John Smith','Peter Parker'];
               foreach($fakeList as $flist){ ?>
               <tr>
                 <td>
-                  <small><?php echo $flist; ?></small>
+                  <small ref="exportNameEN"><?php echo $flist; ?></small>
                 </td>
                 <td class="text-center">
                 <!-- <i class="fas fa-camera-retro"></i> -->
-                  <a href="user.php?empID=123" class="btn btn-outline-danger btn-sm" role="button">&times;</a>
+                  <button type="button" class="btn btn-outline-danger btn-sm">&times;</button>
                 </td>
               </tr>
               <?php } ?>

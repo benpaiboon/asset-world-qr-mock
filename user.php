@@ -9,6 +9,10 @@
   <?php include 'core/lib.header.php'; ?>
 
   <style>
+    #userCardContent .wrapUserImage img{
+      width: 140px;
+      height: auto;
+    }
     #approveTable{
       margin-top: 50px;
     }
@@ -56,7 +60,11 @@
         <div class="row justify-content-center">
           <div class="col-md-5">
             <div class="card">
-              <div class="card-body text-center">
+              <div class="card-body text-center" id="userCardContent">
+                <div class="wrapUserImage mb-4">
+                  <div class="d-inline mr-1"><img src="assets/img/person.JPG" alt="Card image cap"></div>
+                  <div class="d-inline ml-1"><img src="assets/img/qr.JPG" alt="Card image cap"></div>
+                </div>
                 <h5 class="card-title"><b>หาญศักดิ์ อิสริยะทิพย์</b></h5>
                 <p class="card-text">Hansak Aisariyatip</p>
                 <p class="card-text">AVP - Portfolio Project Manager</p>
@@ -67,7 +75,7 @@
                 <p class="card-text"><b>M: </b>+668 4024 5800</p>                
                 <p class="card-text"><b>T: </b>+66 2227 9444 Ext. 9999</p>                
                 <p class="card-text"><b>F: </b>+66 2670 1888</p>
-                <p class="card-text"><img style="width: 120px;" src="assets/img/qr.JPG" alt="Card image cap"></p>
+                <!-- <p class="card-text"><img style="width: 120px;" src="assets/img/qr.JPG" alt="Card image cap"></p> -->
                 <p class="card-text">hansak.a@assetworld.co.th</p>                                
               </div>
             </div>
@@ -88,7 +96,7 @@
                 <td> </td>                
                 <td>Approved by : </td>
                 <td class="text-center">______________________</td>
-                <td>(Head Dept/Div)</td>
+                <td>( __________________ )</td>
               </tr>
               <tr>
                 <td></td>
@@ -99,12 +107,12 @@
                 <td></td>
               </tr>
               <tr>
-                <td>Receive by : </td>
+                <td>Received by : </td>
                 <td class="text-center">______________________</td>
                 <td> </td>                
                 <td>Approved by : </td>
                 <td class="text-center">______________________</td>
-                <td>(CEO)</td>
+                <td>( __________________ )</td>
               </tr>
               <tr>
                 <td></td>
