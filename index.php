@@ -13,7 +13,7 @@
        $('#exportListTable').on('click', 'button', function() {
         var delID = $(this).attr('ref');
         // console.log(delID);
-        $('#exportListTable tr#'+ delID).remove();
+        $('#exportListTable tr.'+ delID).remove();
        });
     });
   </script>
@@ -108,7 +108,7 @@
               <?php 
               $fakeList = ['Hansak','John','Peter'];
               foreach($fakeList as $flist){ ?>
-              <tr id="<?php echo $flist; ?>">
+              <tr class="<?php echo $flist; ?>">
                 <td>
                   <small><?php echo $flist; ?></small>
                 </td>

@@ -15,6 +15,7 @@
     }
     #approveTable{
       margin-top: 50px;
+      /* display: none; */
     }
     #approveTable td{
       border-top: 0px;
@@ -22,9 +23,18 @@
   </style>
 
   <script>
-    function printCard() {
+  // $(document).ready(function () {
+    function printCard(userCard) {
+      var headstr = "<html><head><title></title></head><body>";
+      var footstr = "</body>";
+      var uCard = document.all.item(userCard).innerHTML;
+      var oldstr = document.body.innerHTML;
+      document.body.innerHTML = headstr+uCard+footstr;
       window.print();
+      document.body.innerHTML = oldstr;
+      return false;
     }
+  // });
   </script>
 </head>
 
@@ -55,74 +65,105 @@
           </div>
         </div> -->
         <div class="text-right">
-          <button class="btn btn-info" onclick="printCard()" id="printBtn">Print</button>
+          <button class="btn btn-info" onClick="printCard('printUserCard');" id="printBtn">Print</button>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-5">
-            <div class="card">
-              <div class="card-body text-center" id="userCardContent">
-                <div class="wrapUserImage mb-4">
-                  <div class="d-inline mr-1"><img src="assets/img/person.JPG" alt="Card image cap"></div>
-                  <div class="d-inline ml-1"><img src="assets/img/qr.JPG" alt="Card image cap"></div>
+        <!-- Print Area -->
+        <div id="printUserCard">
+          <div class="row justify-content-center">
+            <div class="col-md-5">
+              <div class="card">
+                <div class="card-body text-center" id="userCardContent">
+                  <div class="wrapUserImage mb-4">
+                    <div class="d-inline mr-1"><img src="assets/img/person.JPG" alt="Card image cap"></div>
+                    <div class="d-inline ml-1"><img src="assets/img/qr.JPG" alt="Card image cap"></div>
+                  </div>
+                  <h5 class="card-title"><b>หาญศักดิ์ อิสริยะทิพย์</b></h5>
+                  <p class="card-text">Hansak Aisariyatip</p>
+                  <p class="card-text">AVP - Portfolio Project Manager</p>
+                  <p class="card-text">Information Technology</p>
+                  <p class="card-text">ASSET WORLD CORP CO., LTD</p>
+                  <p class="card-text">56th Fl, Empire Tower, 1 South Sathorn Road, Yannawa, Sathorn, Bangkok 10120 Thailand.</p>
+                  <p class="card-text">www.assetworld.co.th</p>                
+                  <p class="card-text"><b>M: </b>+668 4024 5800</p>                
+                  <p class="card-text"><b>T: </b>+66 2227 9444 Ext. 9999</p>                
+                  <p class="card-text"><b>F: </b>+66 2670 1888</p>
+                  <!-- <p class="card-text"><img style="width: 120px;" src="assets/img/qr.JPG" alt="Card image cap"></p> -->
+                  <p class="card-text">hansak.a@assetworld.co.th</p>                                
                 </div>
-                <h5 class="card-title"><b>หาญศักดิ์ อิสริยะทิพย์</b></h5>
-                <p class="card-text">Hansak Aisariyatip</p>
-                <p class="card-text">AVP - Portfolio Project Manager</p>
-                <p class="card-text">Information Technology</p>
-                <p class="card-text">ASSET WORLD CORP CO., LTD</p>
-                <p class="card-text">56th Fl, Empire Tower, 1 South Sathorn Road, Yannawa, Sathorn, Bangkok 10120 Thailand.</p>
-                <p class="card-text">www.assetworld.co.th</p>                
-                <p class="card-text"><b>M: </b>+668 4024 5800</p>                
-                <p class="card-text"><b>T: </b>+66 2227 9444 Ext. 9999</p>                
-                <p class="card-text"><b>F: </b>+66 2670 1888</p>
-                <!-- <p class="card-text"><img style="width: 120px;" src="assets/img/qr.JPG" alt="Card image cap"></p> -->
-                <p class="card-text">hansak.a@assetworld.co.th</p>                                
               </div>
             </div>
           </div>
-        </div>
-        <div class="row justify-content-center">
-          <!-- <div class="col-md-2">
-            <p>test</p>
-          </div>
-          <div class="col-md-2">
-            <p>test</p>
-          </div> -->
-          <div class="col-md-11">
-            <table id="approveTable" class="table">
-              <tr>
-                <td>Requested by : </td>
-                <td class="text-center">______________________</td>
-                <td> </td>                
-                <td>Approved by : </td>
-                <td class="text-center">______________________</td>
-                <td>( __________________ )</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td class="text-center">( ______________________ )</td>
-                <td> </td>                
-                <td></td>
-                <td class="text-center">( ______________________ )</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Received by : </td>
-                <td class="text-center">______________________</td>
-                <td> </td>                
-                <td>Approved by : </td>
-                <td class="text-center">______________________</td>
-                <td>( __________________ )</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td class="text-center">( ______________________ )</td>
-                <td> </td>                
-                <td></td>
-                <td class="text-center">( ______________________ )</td>
-                <td></td>
-              </tr>
-            </table>
+          <div class="row justify-content-center">
+            <!-- <div class="col-md-2">
+              <p>test</p>
+            </div>
+            <div class="col-md-2">
+              <p>test</p>
+            </div> -->
+            <div class="col-md-9">
+              <table id="approveTable" class="table">
+                <tr>
+                  <td>Requested by : </td>
+                  <td class="text-center">______________________</td>
+                  <td> </td>                
+                  <td>Approved by : </td>
+                  <td class="text-center">______________________</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td class="text-center">( ______________________ )</td>
+                  <td> </td>                
+                  <td></td>
+                  <td class="text-center">( ______________________ )</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Position : </td>
+                  <td class="text-center">______________________</td>
+                  <td> </td>                
+                  <td>Position : </td>
+                  <td class="text-center">______________________</td>
+                </tr>
+                <tr>
+                  <td>Date : </td>
+                  <td class="text-center">______________________</td>
+                  <td> </td>                
+                  <td>Date :</td>
+                  <td class="text-center">______________________</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Received by : </td>
+                  <td class="text-center">______________________</td>
+                  <td> </td>                
+                  <td>Approved by : </td>
+                  <td class="text-center">______________________</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td class="text-center">( ______________________ )</td>
+                  <td> </td>                
+                  <td></td>
+                  <td class="text-center">( ______________________ )</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Position : </td>
+                  <td class="text-center">______________________</td>
+                  <td> </td>                
+                  <td>Position : </td>
+                  <td class="text-center">______________________</td>
+                </tr>
+                <tr>
+                  <td>Date : </td>
+                  <td class="text-center">______________________</td>
+                  <td> </td>                
+                  <td>Date :</td>
+                  <td class="text-center">______________________</td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
